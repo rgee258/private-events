@@ -1,0 +1,14 @@
+<h1>New Event</h1>
+
+<%= form_for @event do |f| %>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br>
+
+  <%= f.label :description %><br>
+  <%= f.text_field :description %><br> 
+
+  <%= f.label :date %><br>
+  <%= f.date_field :date, min: Date.today %><br>
+
+  <%= f.submit "Submit" %>
+<% end %>

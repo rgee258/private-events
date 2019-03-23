@@ -1,0 +1,19 @@
+<header class="navbar-section">
+  <div>
+    <div class="navbar">
+      <ul>
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "All Events", events_index_path %></li>
+        <% if current_user.nil? %>
+          <li><%= link_to "Sign Up", signup_path %></li>
+          <li><%= link_to "Sign In", signin_path %></li>
+        <% else %>
+          <li><%= link_to "Create Event", events_new_path %></li>
+          <li><%= link_to "Profile", user_path(current_user.id) %></li>
+          <li><%= link_to "Sign Out", signout_path, :method => :delete %></li>
+          <li class="greeting">Hello, <%= current_user.name %>!</li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</header>
